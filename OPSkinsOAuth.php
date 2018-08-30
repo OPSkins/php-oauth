@@ -224,7 +224,7 @@ class OPSkinsOAuth {
             'response_type' => 'code',
             'state' => $state,
             'duration' => 'permanent',
-            'scope' => implode(',', $scopes)
+            'scope' => implode(' ', $scopes)
         ];
 
         return 'https://oauth.opskins.com/v1/authorize?' . http_build_query($input);
