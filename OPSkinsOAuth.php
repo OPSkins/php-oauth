@@ -510,7 +510,9 @@ class OPSkinsClient {
     public function storeClient(){
 
         $client_list = $this->getClientList();
-
+		if(empty($client_list)){
+			$client_list = new \stdClass();
+		}
         $client_list->{$this->client_id} = $this;
 
         if( !$this->verifyNonEmpty() ){
